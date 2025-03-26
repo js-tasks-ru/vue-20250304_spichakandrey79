@@ -1,14 +1,9 @@
-<script>
-import { defineComponent } from 'vue'
+<script setup>
 
-export default defineComponent({
-  name: 'MeetupDescription',
-
-  props: {
-    description: {
-      type: String,
-    },
-  },
+defineProps({
+  description: {
+    type: String
+  }
 })
 </script>
 
@@ -17,7 +12,6 @@ export default defineComponent({
 </template>
 
 <style scoped>
-/* _meetup-description.css */
 .meetup-description {
   margin: var(--spacing-large) 0;
   white-space: pre-wrap;
