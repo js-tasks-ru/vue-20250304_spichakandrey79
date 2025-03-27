@@ -1,19 +1,15 @@
-<script setup>
-// import type { MeetupAgendaItemDTO } from '@shgk/vue-course-ui'
+<script setup lang="ts">
+import type { MeetupAgendaItemDTO } from '@shgk/vue-course-ui'
 import MeetupAgendaItem from './MeetupAgendaItem.vue'
 
-defineProps({
-  agenda: {
-    // Настоящий тип - массив объектов типа MeetupAgendaItemDTO
-    type: Array,
-    required: true,
-  },
-})
+defineProps<{
+  agenda: MeetupAgendaItemDTO
+  }>()
 </script>
 
 <template>
   <ul class="agenda">
-    <li v-for="agendaItem in agenda" :key="agendaItem.id" class="agenda__item">
+    <li v-for="agendaItem in agenda" :key="agendaItem?.id" class="agenda__item">
       <MeetupAgendaItem :agenda-item="agendaItem" />
     </li>
   </ul>
