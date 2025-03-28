@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Slot } from 'vue'
-const props = defineProps<{
+defineProps<{
   for?: string
   label?: string
   hint?: string
@@ -19,18 +19,18 @@ defineSlots<{
 <template>
   <div class="form-group">
     <div class="form-group__label-wrapper">
-      <label :for="props.for" class="form-group__label">
-        <slot name="label">{{ props.label }}</slot>
+      <label :for="$props.for" class="form-group__label">
+        <slot name="label">{{ label }}</slot>
       </label>
       <div class="form-group__description">
-        <slot name="description">{{ props.description }}</slot>
+        <slot name="description">{{ description }}</slot>
       </div>
     </div>
     <div class="form-group__control">
       <slot name="default"></slot>
     </div>
-    <div v-if="props.hint" :class="{ 'form-group__hint--invalid': props.invalid }" class="form-group__hint">
-      {{ props.showHint || props.invalid ? props.hint : '' }}
+    <div v-if="hint" :class="{ 'form-group__hint--invalid': invalid }" class="form-group__hint">
+      {{ showHint || invalid ? hint : '' }}
     </div>
   </div>
 </template>
