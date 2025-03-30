@@ -3,7 +3,7 @@ import { computed } from 'vue'
 
 const props = defineProps<{
   title: string
-  image: string
+  image?: string
   }>()
 
 const bgStyle = computed(() => (props.image ? { '--bg-url': `url('${props.image}')` } : undefined))

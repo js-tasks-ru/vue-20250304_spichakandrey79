@@ -3,13 +3,13 @@ import type { MeetupAgendaItemDTO } from '@shgk/vue-course-ui'
 import MeetupAgendaItem from './MeetupAgendaItem.vue'
 
 defineProps<{
-  agenda: MeetupAgendaItemDTO
+  agenda: MeetupAgendaItemDTO[]
   }>()
 </script>
 
 <template>
   <ul class="agenda">
-    <li v-for="agendaItem in agenda" :key="agendaItem?.id" class="agenda__item">
+    <li v-for="agendaItem in agenda" :key="agendaItem.id" class="agenda__item">
       <MeetupAgendaItem :agenda-item="agendaItem" />
     </li>
   </ul>

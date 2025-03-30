@@ -37,8 +37,6 @@ defineSlots<{
 
 <style scoped>
 /* _form-group.css */
-.form-group {
-}
 
 .form-group__label-wrapper {
   margin-block-end: var(--spacing-small);

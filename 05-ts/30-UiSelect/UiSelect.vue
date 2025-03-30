@@ -12,7 +12,7 @@ const model = defineModel<T>()
 </script>
 
 <template>
-  <select class="select" v-model="model">
+  <select v-model="model" class="select">
     <option v-for="option in options" :selected="model == option.value" :value="option.value">
       {{ option.text }}
     </option>
