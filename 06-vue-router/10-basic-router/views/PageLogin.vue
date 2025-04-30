@@ -7,9 +7,8 @@ import { login } from '../api.ts'
 import { useRoute, useRouter } from 'vue-router'
 
 
-const {query} = useRoute()
+const route = useRoute()
 const router = useRouter()
-
 
 const email = ref('demo@email')
 const password = ref('password')
@@ -18,7 +17,7 @@ async function onSubmit() {
   try {
     await login(email.value, password.value)
     // Авторизация прошла успешно
-      router.push({name: query.from ? query.from.slice(1) : 'index'})
+      router.push({path: route.query.from ? route.query.from as string : '/'})
     // }
     
   } catch (error) {

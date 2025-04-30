@@ -3,12 +3,12 @@
 <template>
   <nav class="nav">
     <RouterLink to="/" class="nav__link" >Главная</RouterLink>
-    <RouterLink to="foo" class="nav__link">Страница Foo</RouterLink>
-    <RouterLink to="bar" class="nav__link">Страница Bar</RouterLink>
-    <RouterLink to="login" class="nav__link">Вход</RouterLink>
-    <RouterLink to="login?from=/foo" class="nav__link">Вход /login?from=/foo</RouterLink>
-    <RouterLink to="login?from=/bar" class="nav__link">Вход /login?from=/bar</RouterLink>
-    <RouterLink to="register" class="nav__link">Регистрация</RouterLink>
+    <RouterLink to="/foo" class="nav__link">Страница Foo</RouterLink>
+    <RouterLink to="/bar" class="nav__link">Страница Bar</RouterLink>
+    <RouterLink to="/login" class="nav__link">Вход</RouterLink>
+    <RouterLink to="/login?from=/foo" class="nav__link">Вход /login?from=/foo</RouterLink>
+    <RouterLink to="/login?from=/bar" class="nav__link">Вход /login?from=/bar</RouterLink>
+    <RouterLink to="/register" class="nav__link">Регистрация</RouterLink>
   </nav>
   <!-- <nav class="nav">
     <a href="/index" class="nav__link">Главная</a>
