@@ -1,25 +1,27 @@
-<script setup lang="ts">
-import { computed } from 'vue'
-
-// Вместо <span> должен быть <RouterLink> или <a>
-// Используйте динамический компонент <component :is="...">
-
-const props = defineProps<{
-  to?: string | {to: string}
-  href?: string
-}>()
-
-
-const link = computed(() => props.to ? {to: props.to} : {href: props.href})
-
+<script setup>
+import { computed } from 'vue';
+const props = defineProps({
+  to: {
+    type: [String, Object],
+    required: false,
+  },
+  href: {
+    type: String,
+    required: false,
+  },
+});
+const componentType = computed(() => {
+  return props.to ? 'RouterLink' : 'a';
+});
+const componentProps = computed(() => {
+  return props.to ? { to: props.to } : { href: props.href };
+});
 </script>
 
 <template>
-  <component :is="props.to ? 'router-link' : 'a'" v-bind="link" class="link">
-    <slot />
+  <component :is="componentType" v-bind="componentProps" class="link">
+    <slot>Link</slot>
   </component>
-
-  <!-- <span class="link" tabindex="0">Link</span> -->
 </template>
 
 <style scoped>
