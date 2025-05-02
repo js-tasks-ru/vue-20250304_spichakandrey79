@@ -5,15 +5,17 @@ import { computed } from 'vue'
 // Используйте динамический компонент <component :is="...">
 
 const props = defineProps<{
-  to?: string | {}
+  to?: string | {to: string}
   href?: string
 }>()
 
-const link = computed(() => props.href ? {to: props.to} : {href: props.href})
+
+const link = computed(() => props.to ? {to: props.to} : {href: props.href})
+
 </script>
 
 <template>
-  <component :is="props.to ? 'router-link' : 'a'" :link="link" class="link">
+  <component :is="props.to ? 'router-link' : 'a'" v-bind="link" class="link">
     <slot />
   </component>
 
